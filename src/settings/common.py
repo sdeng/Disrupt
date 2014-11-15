@@ -135,3 +135,8 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = True
 
 NO_REPLY_EMAIL = 'no-reply@tokdoc.com'
+
+ATHENAHEALTH_KEY    = ''
+ATHENAHEALTH_SECRET = ''
+
+
