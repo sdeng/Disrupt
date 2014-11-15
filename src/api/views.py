@@ -42,11 +42,3 @@ def sync_encounters(request, *args, **kwargs):
     for patient_id in patients:
         encounters = api.GET('/chart/%s/encounters' % patient_id, {'departmentid':settings.DEPARTMENT_ID})
     return Response(status.HTTP_200_OK)
-
-
-
-
-<<<<<<< HEAD
-=======
-    return Response(status.HTTP_200_OK)
->>>>>>> bd24b3597ca6562872dd6e647ac4f9c33754c457
