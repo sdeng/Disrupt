@@ -1,0 +1,18 @@
+.login-container
+    i.fa.fa-long-arrow-right
+    a(href='/login')
+        p login
+.content
+    .logo
+        p hälsa.io
+        p.tag-line Personalized healthcare.
+    form(ng-submit='request_invite()')
+      input.form-control-input(placeholder='Enter your email', type='text', ng-model='email_address')
+      .btn(ng-click='request_invite()')
+        | Request Invitation
+
+    .promo
+        p loose weight
+        p start a new exercise routine
+        p change careers
+        p improve your diet

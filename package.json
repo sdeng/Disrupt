@@ -1,0 +1,8 @@
+{
+    "name": "Disruption",
+    "description": "More Disruption Please, hosted by athenahealth.",
+    "dependencies": {
+        "coffee-script": ">= 1.8.0",
+        "less": ">= 1.7.5"
+    }
+}

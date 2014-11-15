@@ -1,0 +1,6 @@
+p client invite
+
+form(ng-submit='send_invite()')
+  input.form-control-input(placeholder='Enter client email', type='text', ng-model='email_address')
+  .btn(ng-click='send_invite()')
+    | Send Request

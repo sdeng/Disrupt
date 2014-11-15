@@ -1,0 +1,26 @@
+{% extends "partials/app_layout.jade" %}
+{% block content %}
+div(ng-view)
+{% endblock %}
+
+{% block templates %}
+
+script#home_template(type="text/ng-template")
+    {% include "pages/home.jade" %}
+script#confirm_invite_template(type="text/ng-template")
+    {% include "pages/confirm_invite.jade" %}
+script#goal_template(type="text/ng-template")
+    {% include "pages/goal.jade" %}
+script#invite_client_template(type="text/ng-template")
+    {% include "pages/invite_client.jade" %}
+script#landing_page_template(type="text/ng-template")
+    {% include "pages/landing.jade" %}
+script#login_template(type="text/ng-template")
+    {% include "pages/login.jade" %}
+script#thank_you_template(type="text/ng-template")
+    {% include "pages/thank_you.jade" %}
+
+script#goal_template(type="text/ng-template")
+    {% include "partials/goal.jade" %}
+
+{% endblock %}
