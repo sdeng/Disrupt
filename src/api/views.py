@@ -17,7 +17,7 @@ from django.template import Context
 @permission_classes((IsAuthenticated, ))
 def account_info(request, *args, **kwargs):
     info = {
-        'user_id':request.user.id,
+        'user_id': request.user.id,
     }
     return Response(info, status=status.HTTP_200_OK)
 
