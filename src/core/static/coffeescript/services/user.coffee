@@ -1,4 +1,4 @@
-Disrupt.factory 'UserService', ($http, $location, ipCookie)->
+Disrupt.factory 'UserService', ($http, $location, ipCookie, growl)->
   service =
     account_info: (promise)->
       if service._account_info
@@ -21,10 +21,14 @@ Disrupt.factory 'UserService', ($http, $location, ipCookie)->
           # the token checker in the Page controller will do this
           # service.token_checked = true
           promise.success(data.token)
-        .error (data, status) -> promise.error()
+          growl.addSuccessMessage("Login success.", {ttl: 2000})
+        .error (data, status) ->
+          promise.error()
+          growl.addErrorMessage("Login Failed", {ttl: 2000})
 
     logout: () ->
       ipCookie('token', null)
       service.token = null
       service.token_checked = false
       $location.path('/login')
+      growl.addSuccessMessage("Bye!", {ttl: 2000})
