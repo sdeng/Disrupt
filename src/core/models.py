@@ -15,12 +15,13 @@ class UserProfile(TimestampMixin):
     user      = models.ForeignKey(User)
 
 class Encounter(TimestampMixin):
-    athenahealth_encounter_id   = models.IntegerField()
+    athenahealth_encounter_id   = models.IntegerField(unique=True)
     patient                     = models.ForeignKey('UserProfile', related_name='patient_encounters')
     doctor                      = models.ForeignKey('UserProfile', related_name='doctor_encounters')
     diagnosis                   = models.ManyToManyField('Diagnosis', null=True, blank=True)
     treatment_plan              = models.ManyToManyField('TreatmentPlan',  null=True, blank=True)
     life_style                  = models.ManyToManyField('Lifestyle', null=True, blank=True)
+    followed_up                 = models.BooleanField(default=False)
 
 class Diagnosis(TimestampMixin):
     code = models.CharField(max_length=255)
