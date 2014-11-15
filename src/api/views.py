@@ -30,7 +30,6 @@ def user_lookup(request, *args, **kwargs):
     print 'lookup...'
     return Response(status.HTTP_200_OK)
 
-
 @api_view(['POST'])
 @permission_classes((AllowAny,))
 def sync_encounters(request, *args, **kwargs):
@@ -43,5 +42,4 @@ def sync_encounters(request, *args, **kwargs):
         encounters = api.GET('/chart/%s/encounters' % patient_id, {'departmentid':settings.DEPARTMENT_ID})
         for encounter in encounters['encounters']:
             encounter, created = Encounter.objects.get_or_create(athenahealth_encounter_id=encounter['encounterid'])
-
     return Response(status.HTTP_200_OK)
