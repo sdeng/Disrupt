@@ -13,4 +13,3 @@ Disrupt
                 $location.path "/login"
             if ipCookie('token') and ($location.path() in public_pages)
                 $location.path "/home"
-

@@ -1,8 +1,9 @@
-Disrupt.controller 'Home', ($scope, $http, $location, growl) ->
+Disrupt.controller 'Home', ($scope, $http, $location, growl, UserService) ->
     _.extend $scope,
-    console.log 'landing page..'
+        doLogout: ()->
+            UserService.logout()
 
-
-
-
-
+    UserService.account_info
+        success: (info) ->
+            $scope.account_info = info
+        error: () ->

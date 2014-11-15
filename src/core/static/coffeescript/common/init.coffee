@@ -10,13 +10,18 @@ window.Disrupt = angular.module 'Disrupt', [
   'angular-growl',
 ]
 
+window.Disrupt.config ($httpProvider) ->
+  if $('input[name=csrfmiddlewaretoken]')
+    csrf_token = $('input[name=csrfmiddlewaretoken]')[0].value
+    $httpProvider.defaults.headers.common['X-CSRFToken'] = csrf_token
+
 window.Disrupt.run ($http, ipCookie)->
     if ipCookie('token')
         $http.defaults.headers.common.Authorization = 'Token ' + ipCookie('token')
 
 window.Disrupt.run ($rootScope) ->
-      $rootScope.$watchForValid = (watchExp, listener, objectEquality, deregisterNotifier) ->
-            checkValid = (newValue, oldValue) ->
-              listener() if newValue
-            # this is the caller's scope
-            this.$watch watchExp, checkValid, objectEquality, deregisterNotifier
+  $rootScope.$watchForValid = (watchExp, listener, objectEquality, deregisterNotifier) ->
+    checkValid = (newValue, oldValue) ->
+      listener() if newValue
+    # this is the caller's scope
+    this.$watch watchExp, checkValid, objectEquality, deregisterNotifier
