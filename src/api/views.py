@@ -19,7 +19,8 @@ from src.athenahealth import athenahealthapi
 @permission_classes((IsAuthenticated, ))
 def account_info(request, *args, **kwargs):
     info = {
-        'user_id':request.user.id,
+        'user_id': request.user.id,
+        'user_type': request.user.profile.user_type
     }
     return Response(info, status=status.HTTP_200_OK)
 
@@ -45,3 +46,7 @@ def sync_encounters(request, *args, **kwargs):
 
 
 
+<<<<<<< HEAD
+=======
+    return Response(status.HTTP_200_OK)
+>>>>>>> bd24b3597ca6562872dd6e647ac4f9c33754c457
