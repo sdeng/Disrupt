@@ -14,6 +14,9 @@ class UserProfile(TimestampMixin):
     user_type = models.CharField(max_length=255, choices=TYPES)
     user      = models.OneToOneField(User, related_name='profile')
 
+    def __unicode__(self):
+        return u'%s' % self.user
+
 class Encounter(TimestampMixin):
     athenahealth_encounter_id   = models.IntegerField(unique=True)
     patient                     = models.ForeignKey('UserProfile', related_name='patient_encounters')

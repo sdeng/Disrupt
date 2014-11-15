@@ -23,6 +23,7 @@ def path_join(*parts):
 def account_info(request, *args, **kwargs):
     info = {
         'user_id': request.user.id,
+        'user_type': request.user.profile.user_type
     }
     return Response(info, status=status.HTTP_200_OK)
 
