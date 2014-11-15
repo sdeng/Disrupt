@@ -8,9 +8,9 @@ Disrupt
         $locationProvider.html5Mode true)
     .run ($rootScope, $location, $http, ipCookie) ->
         $rootScope.$on '$routeChangeStart', (event, next, current) ->
-            public_pages = ['/login', '/thanks', '/confirm-invite', '/']
+            public_pages = ['/login', '/']
             if not ipCookie('token') and not ($location.path() in public_pages)
-                $location.path "/"
+                $location.path "/login"
             if ipCookie('token') and ($location.path() in public_pages)
                 $location.path "/home"
 

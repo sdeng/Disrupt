@@ -1,0 +1,8 @@
+.logo
+    p Disrupt
+form.form-signin(ng-show="show_login", name="login_form")
+    input.form-control-input(type='text', placeholder='Email address', required='', autofocus='', ng-model="login_form.email")
+    input.form-control-input(type='password', placeholder='Password', required='', ng-model="login_form.password")
+    .btn(type='submit',  ng-click="doLogin()")
+      | Sign In
+    a(href='#') forgot password?
