@@ -19,8 +19,8 @@ class UserProfile(TimestampMixin):
 
 class Encounter(TimestampMixin):
     athenahealth_encounter_id   = models.IntegerField(unique=True)
-    patient                     = models.ForeignKey('UserProfile', related_name='patient_encounters')
-    doctor                      = models.ForeignKey('UserProfile', related_name='doctor_encounters')
+    patient                     = models.ForeignKey('UserProfile', related_name='patient_encounters,', null=True, blank=True)
+    doctor                      = models.ForeignKey('UserProfile', related_name='doctor_encounters', null=True, blank=True)
     diagnosis                   = models.ManyToManyField('Diagnosis', null=True, blank=True)
     treatment_plan              = models.ManyToManyField('TreatmentPlan',  null=True, blank=True)
     life_style                  = models.ManyToManyField('Lifestyle', null=True, blank=True)
