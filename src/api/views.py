@@ -9,10 +9,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import EmailMultiAlternatives
 from django.contrib.auth import logout
 from django.template.loader import get_template
-from core.models import *
+from core.models import Encounter
 from django.template import Context
 from django.conf import settings
-from src.athenahealth import athenahealthapi
+from athenahealth import athenahealthapi
 
 
 @api_view(['GET'])
@@ -41,4 +41,7 @@ def sync_encounters(request, *args, **kwargs):
     patients = ['1']
     for patient_id in patients:
         encounters = api.GET('/chart/%s/encounters' % patient_id, {'departmentid':settings.DEPARTMENT_ID})
+        for encounter in encounters['encounters']:
+            encounter, created = Encounter.objects.get_or_create(athenahealth_encounter_id=encounter['encounterid'])
+
     return Response(status.HTTP_200_OK)
