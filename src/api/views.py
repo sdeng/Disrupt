@@ -11,7 +11,12 @@ from django.contrib.auth import logout
 from django.template.loader import get_template
 from core.models import *
 from django.template import Context
+from django.conf import settings
+from src.athenahealth import athenahealthapi
 
+
+def path_join(*parts):
+	return ''.join('/' + str(part).strip('/') for part in parts if part)
 
 @api_view(['GET'])
 @permission_classes((IsAuthenticated, ))
@@ -27,3 +32,14 @@ def user_lookup(request, *args, **kwargs):
     print 'lookup...'
     return Response(status.HTTP_200_OK)
 
+
+@api_view(['POST'])
+@permission_classes((AllowAny,))
+def sync_encounters(request, *args, **kwargs):
+    api = athenahealthapi.APIConnection(settings.ATHENAHEALTH_API_VERSION,
+                                        settings.ATHENAHEALTH_API_KEY,
+                                        settings.ATHENAHEALTH_API_SECRET,
+                                        settings.PRACTICE_ID)
+
+
+    return Response(status.HTTP_200_OK)
