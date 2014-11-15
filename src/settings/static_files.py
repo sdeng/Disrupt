@@ -45,7 +45,6 @@ PIPELINE_JS = {
             "coffeescript/common/init.coffee",
             "coffeescript/common/router.coffee",
             "coffeescript/services/user.coffee",
-            "coffeescript/directives/goal.coffee",
             "coffeescript/resources/user.coffee",
             "coffeescript/controllers/confirm_invite.coffee",
             "coffeescript/controllers/home.coffee",

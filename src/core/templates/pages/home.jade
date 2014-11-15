@@ -1,28 +1,3 @@
 {% verbatim %}
 h1 Homepage
-
-.btn(ng-click='doLogout()') logout
-
-.add_clients(ng-show='account_info.is_coach')
-    .btn
-        a(href='/invite-client') add client
-
-.goals-list
-    h5 your goals
-    .goals(ng-repeat='goal in goals')
-        goal(goal)
-
-.coach-list
-    h3 Coaches
-    .coaches(ng-repeat='coach in coaches')
-        h5 {{coach.email}}
-
-.client-list(ng-show='account_info.is_coach')
-    h3 Clients
-    accordion(close-others='oneAtATime')
-        .clients(ng-repeat='client in clients', ng-click='selectClient(this)')
-            accordion-group(heading='{{client.email}}')
-                .goals(ng-repeat='goal in client.goals')
-                    goal(goal)
-
 {% endverbatim %}
