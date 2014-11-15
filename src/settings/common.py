@@ -140,6 +140,7 @@ ATHENAHEALTH_API_KEY      = ''
 ATHENAHEALTH_API_SECRET   = ''
 ATHENAHEALTH_API_VERSION  = ''
 PRACTICE_ID               = ''
+DEPARTMENT_ID             = ''
 
 
 

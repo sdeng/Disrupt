@@ -15,9 +15,6 @@ from django.conf import settings
 from src.athenahealth import athenahealthapi
 
 
-def path_join(*parts):
-	return ''.join('/' + str(part).strip('/') for part in parts if part)
-
 @api_view(['GET'])
 @permission_classes((IsAuthenticated, ))
 def account_info(request, *args, **kwargs):
@@ -40,6 +37,11 @@ def sync_encounters(request, *args, **kwargs):
                                         settings.ATHENAHEALTH_API_KEY,
                                         settings.ATHENAHEALTH_API_SECRET,
                                         settings.PRACTICE_ID)
-
-
+    patients = ['1']
+    for patient_id in patients:
+        encounters = api.GET('/chart/%s/encounters' % patient_id, {'departmentid':settings.DEPARTMENT_ID})
     return Response(status.HTTP_200_OK)
+
+
+
+
