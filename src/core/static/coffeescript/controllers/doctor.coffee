@@ -1,9 +1,25 @@
 Disrupt.controller 'Doctor', ($scope, $http, $location) ->
     _.extend $scope,
+        is_diagnosis_hidden: false
+        is_treatment_hidden: false
+        is_lifestyle_hidden: false
+        is_test_results_hidden: false
         patient_name: 'Sam Deng'
         reason_for_visit: 'Diabetic care'
         diagnosis: 'Sams foot turned into one giant calluses'
         test_results: {'date':'10/10/2014', 'expected':'10/10/2014'}
+        toggleSection: (section)->
+            if section == 'diagnosis'
+                $scope.is_diagnosis_hidden = !$scope.is_diagnosis_hidden
+            if section == 'treatment'
+                $scope.is_treatment_hidden = !$scope.is_treatment_hidden
+            if section == 'lifestyle'
+                $scope.is_lifestyle_hidden = !$scope.is_lifestyle_hidden
+            if section == 'tests_ordered'
+                $scope.is_test_results_hidden = !$scope.is_test_results_hidden
+
+
+
         treatment_options: [
                         {'name':'Neuropathy',content:"Although it can hurt, diabetic nerve damage can also lessen your ability to feel pain, heat, and cold. Loss of feeling often means you may not feel a foot injury. You could have a tack or stone in your shoe and walk on it all day without knowing. You could get a blister and not feel it. You might not notice a foot injury until the skin breaks down and becomes infected. Nerve damage can also lead to changes in the shape of your feet and toes. Ask your health care provider about special therapeutic shoes, rather than forcing deformed feet and toes into regular shoes."},
                         {'name':'Skin Changes','content':"Diabetes can cause changes in the skin of your foot. At times your foot may become very dry. The skin may peel and crack. The problem is that the nerves that control the oil and moisture in your foot no longer work. After bathing, dry your feet and seal in the remaining moisture with a thin coat of plain petroleum jelly, an unscented hand cream, or other such products. Do not put oils or creams between your toes. The extra moisture can lead to infection. Also, don't soak your feet — that can dry your skin."},

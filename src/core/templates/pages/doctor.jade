@@ -13,43 +13,55 @@
     .row.diagnosis
         .col-md-12.column
           h1
+            .btn.btn-primary(ng-click="toggleSection('diagnosis')", ng-show='!is_diagnosis_hidden') hide
+            .btn.btn-success(ng-click="toggleSection('diagnosis')", ng-show='is_diagnosis_hidden') show
             | Diagnosis
-          p
+          p(ng-show='!is_diagnosis_hidden')
             | {{diagnosis}}
     .row.treatment
         .col-md-12.column
           h1
+            .btn.btn-primary(ng-click="toggleSection('treatment')", ng-show='!is_treatment_hidden') hide
+            .btn.btn-success(ng-click="toggleSection('treatment')", ng-show='is_treatment_hidden') show
             | Treatment
-          .styled-select.blue.semi-square
-                select(ng-model='selected_treatment_option', ng-options='treatment_option as treatment_option.name for treatment_option in treatment_options')
-                    option(value='')
-          p {{selected_treatment_option.content}}
+          .content(ng-show='!is_treatment_hidden')
+              .styled-select.blue.semi-square
+                    select(ng-model='selected_treatment_option', ng-options='treatment_option as treatment_option.name for treatment_option in treatment_options')
+                        option(value='')
+              p
+                | {{selected_treatment_option.content}}
     .row.lifestyle
         .col-md-12.column
           h1
+            .btn.btn-primary(ng-click="toggleSection('lifestyle')", ng-show='!is_lifestyle_hidden') hide
+            .btn.btn-success(ng-click="toggleSection('lifestyle')", ng-show='is_lifestyle_hidden') show
             | Lifestyle
-          form.form-inline(action='demo_form.asp', method='get')
-            .checkbox(ng-repeat='choice in lifestyle_choices')
-                label
-                  input(type='checkbox', ng-model='choice.selected')
-                  | {{choice.name}}
+          .content(ng-show='!is_lifestyle_hidden')
+              form.form-inline(action='demo_form.asp', method='get')
+                .checkbox(ng-repeat='choice in lifestyle_choices')
+                    label
+                      input(type='checkbox', ng-model='choice.selected')
+                      | {{choice.name}}
 
-          .selected_choices(ng-repeat='selected_lifestyle_choice in selected_lifestyle_choices')
-            p {{selected_lifestyle_choice.content}}
+              .selected_choices(ng-repeat='selected_lifestyle_choice in selected_lifestyle_choices')
+                p {{selected_lifestyle_choice.content}}
 
     .row.tests_ordered
         .col-md-12.column
           h3
+            .btn.btn-primary(ng-click="toggleSection('tests_ordered')", ng-show='!is_test_results_hidden') hide
+            .btn.btn-success(ng-click="toggleSection('tests_ordered')", ng-show='is_test_results_hidden') show
             | Test Results
-          dl
-            dt
-              | Date Ordered
-            dd
-              | 10/10/2014
-            dt
-              | Expected Arrival Date
-            dd
-              | Reason
+          .content(ng-show='!is_test_results_hidden')
+              dl
+                dt
+                  | Date Ordered
+                dd
+                  | 10/10/2014
+                dt
+                  | Expected Arrival Date
+                dd
+                  | Reason
     .row.next_visit
         .col-md-12.column
           h1
