@@ -21,6 +21,7 @@
                 | {{diagnosis}}
     .row.treatment
         .col-md-12.column
+          hr
           h1
             .btn.btn-primary(ng-click="toggleSection('treatment')", ng-show='!is_treatment_hidden') hide
             .btn.btn-success(ng-click="toggleSection('treatment')", ng-show='is_treatment_hidden') show patient
@@ -33,6 +34,7 @@
                 | {{selected_treatment_option.content}}
     .row.lifestyle
         .col-md-12.column
+          hr
           h1
             .btn.btn-primary(ng-click="toggleSection('lifestyle')", ng-show='!is_lifestyle_hidden') hide
             .btn.btn-success(ng-click="toggleSection('lifestyle')", ng-show='is_lifestyle_hidden') show patient
@@ -125,11 +127,13 @@
 
     .row.tests_ordered
         .col-md-12.column
+          hr
           h1
             .btn.btn-primary(ng-click="toggleSection('tests_ordered')", ng-show='!is_test_results_hidden') hide
             .btn.btn-success(ng-click="toggleSection('tests_ordered')", ng-show='is_test_results_hidden') show patient
             | Test & Lab Orders
           .content(ng-show='!is_test_results_hidden')
+            .col-md-12.column
               dl
                 dt
                   | Date Ordered
@@ -137,8 +141,10 @@
                   | 10/10/2014
                 dt
                   | Expected Arrival Date
-                dd
+                dt
                   | Reason
+                dd
+                  | Blood work.
 
 
 
