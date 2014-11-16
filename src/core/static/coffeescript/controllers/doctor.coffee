@@ -1,9 +1,9 @@
 Disrupt.controller 'Doctor', ($scope, $http, $location) ->
     _.extend $scope,
-        is_diagnosis_hidden: false
-        is_treatment_hidden: false
-        is_lifestyle_hidden: false
-        is_test_results_hidden: false
+        is_diagnosis_hidden: true
+        is_treatment_hidden: true
+        is_lifestyle_hidden: true
+        is_test_results_hidden: true
         is_skin_selected: true
         is_blood_pressure_selected: true
         patient_name: 'Sam Deng'
