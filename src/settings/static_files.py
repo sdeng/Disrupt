@@ -52,6 +52,7 @@ PIPELINE_JS = {
             "coffeescript/controllers/login.coffee",
             "coffeescript/controllers/landing_page.coffee",
             "coffeescript/controllers/goal.coffee",
+            "coffeescript/controllers/doctor.coffee",
         ),
         'output_filename': 'js/application.js',
     },
