@@ -3,84 +3,58 @@
 .container
     .row
         .col-md-6
-            h1 Sam Deng
+            h1 {{patient_name}}
         .col-md-6
     .row
         .col-md-4
-            h1 Reason for visit
+            h3 Reason for visit
         .col-md-8
-            h1 Diabetic care
+            h3 {{reason_for_visit}}
     .row.diagnosis
         .col-md-12.column
           h1
             | Diagnosis
           p
-            | Sams foot turned into one giant calluses
+            | {{diagnosis}}
     .row.treatment
         .col-md-12.column
           h1
             | Treatment
-
           .styled-select.blue.semi-square
-                select
-                    option Foot Complications
-                    option Neuropathy
-                    option Eye Complications
-                    option Skin Complications
+                select(ng-model='selected_treatment_option', ng-options='treatment_option as treatment_option.name for treatment_option in treatment_options')
+                    option(value='')
+          p {{selected_treatment_option.content}}
     .row.lifestyle
         .col-md-12.column
           h1
             | Lifestyle
-          form(action='demo_form.asp', method='get')
-            input(type='checkbox', name='lifestyle', value='WeightLoss', checked='checked')
-            p Weight Loss
-            br
-            input(type='checkbox', name='lifestyle', value='Nutrition')
-            p Nutrition
-            br
-            input(type='checkbox', name='lifestyle', value='SafetyPrecautions')
-            p Safety Precautions
-            br
-            input(type='checkbox', name='lifestyle', value='MentalHealth')
-            p Mental Health
-            br
+          form.form-inline(action='demo_form.asp', method='get')
+            .checkbox(ng-repeat='choice in lifestyle_choices')
+                label
+                  input(type='checkbox', ng-model='choice.selected')
+                  | {{choice.name}}
 
-
-
-
+          .selected_choices(ng-repeat='selected_lifestyle_choice in selected_lifestyle_choices')
+            p {{selected_lifestyle_choice.content}}
 
     .row.tests_ordered
         .col-md-12.column
-          h1
-            | Tests Ordered
-          p
-            | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-
-          .styled-select.blue.semi-square
-                select
-                    option Here is the first option
-                    option Here is the first option
-
-    .row.perscriptions
-        .col-md-12.column
-          h1
-            | Perscrptions
           h3
-            | Perscription 1
-        select
-            option(value='Volvo') Volvo
-            option(value='Saab') Volvo
-        select
-            option(value='Volvo') Volvo
-            option(value='Saab') Volvo
-        select
-            option(value='Volvo') Volvo
-            option(value='Saab') Volvo
-
+            | Test Results
+          dl
+            dt
+              | Date Ordered
+            dd
+              | 10/10/2014
+            dt
+              | Expected Arrival Date
+            dd
+              | Reason
     .row.next_visit
         .col-md-12.column
           h1
             | Next Visit
+            | 10/10/2014
 
 
 
