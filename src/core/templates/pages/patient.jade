@@ -1,11 +1,30 @@
 {% verbatim %}
-.btn(ng-click='doLogout()') logout
+nav.navbar.navbar-default(role='navigation')
+    .container-fluid
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='#top')
+                | Top
+            li
+              a(href='#medications')
+                | Medications
+            li
+              a(href='#diagnosis')
+                | Diagnosis
+            li
+              a(href='#recommendations')
+                | Recommendations
+            li
+              a(href='#tests')
+                | Test Orders
 
 .container
     .row.clearfix
         .col-md-6.column
           img(src='https://pbs.twimg.com/profile_images/2601360658/image.jpg' width='300px')
           h3
+            a(name='top')
             | Dr. Vijay
           p.text-left
             | Reason for Visit: Diabetic Care
@@ -30,6 +49,7 @@
       .row.clearfix
         .col-md-12.column
           hr
+          a(name='medications')
           h3
             | Medications
       .row.clearfix
@@ -51,6 +71,7 @@
       .row.clearfix
         .col-md-12.column
           hr
+          a(name='diagnosis')
           h3 Learn About Your Diagnosis
           h4
             | Neuropathy (Nerve Damage)
@@ -77,8 +98,10 @@
       .row.clearfix
         .col-md-12.column
           hr
+          a(name='recommendations')
           h3
-            | Lifestyle Recommendations
+            | Recommendations
+
           h4
             | Skin Care
           p
@@ -161,8 +184,9 @@
       .row.clearfix
         .col-md-12.column
           hr
+          a(name='tests')
           h3
-            | Test Orders
+            | Test & Lab Orders
           dl
             dt
               | Date Ordered
