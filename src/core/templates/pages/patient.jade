@@ -47,11 +47,38 @@
          .btn-group
           label.btn.btn-success(ng-model='medication_helpful' btn-radio="'Helpful'") Helpful
           label.btn.btn-success(ng-model='medication_helpful' btn-radio="'Confusing'") Confusing
+
+      .row.clearfix
+        .col-md-12.column
+          hr
+          h3 Learn About Your Diagnosis
+          h4
+            | Neuropathy (Nerve Damage)
+          .media
+            .pull-right
+              img.media-object.pull-left(src='http://www.diabetes.org/assets/img/living/neuropathy-365x234.jpg', alt='')
+            .media-body
+              p
+                | Nerve damage from diabetes is called diabetic neuropathy (new-ROP-uh-thee). About half of all people with diabetes have some form of nerve damage. It is more common in those who have had the disease for a number of years and can lead to many kinds of problems.
+              p
+                | If you keep your blood glucose levels on target, you may help prevent or delay nerve damage. If you already have nerve damage, this will help prevent or delay further damage. There are also other treatments that can help.
+          h4
+            | Peripheral Neuropathy
+          p
+            | Peripheral neuropathy can cause tingling, pain, numbness, or weakness in your feet and hands.
+          h4
+            | Autonomic Neuropathy
+          p
+            | Autonomic neuropathy affects the nerves in your body that control your body systems.
+        .btn-group
+          label.btn.btn-success(ng-model='neuropathy_helpful' btn-radio="'Helpful'") Helpful
+          label.btn.btn-success(ng-model='neuropathy_helpful' btn-radio="'Confusing'") Confusing
+
       .row.clearfix
         .col-md-12.column
           hr
           h3
-            | Lifestyle
+            | Lifestyle Recommendations
           h4
             | Skin Care
           p
@@ -130,30 +157,7 @@
         .btn-group
           label.btn.btn-success(ng-model='lifestyle_helpful' btn-radio="'Helpful'") Helpful
           label.btn.btn-success(ng-model='lifestyle_helpful' btn-radio="'Confusing'") Confusing
-      .row.clearfix
-        .col-md-12.column
-          hr
-          h3
-            | Neuropathy (Nerve Damage)
-          .media
-            .pull-right
-              img.media-object.pull-left(src='http://www.diabetes.org/assets/img/living/neuropathy-365x234.jpg', alt='')
-            .media-body
-              p
-                | Nerve damage from diabetes is called diabetic neuropathy (new-ROP-uh-thee). About half of all people with diabetes have some form of nerve damage. It is more common in those who have had the disease for a number of years and can lead to many kinds of problems.
-              p
-                | If you keep your blood glucose levels on target, you may help prevent or delay nerve damage. If you already have nerve damage, this will help prevent or delay further damage. There are also other treatments that can help.
-          h4
-            | Peripheral Neuropathy
-          p
-            | Peripheral neuropathy can cause tingling, pain, numbness, or weakness in your feet and hands.
-          h4
-            | Autonomic Neuropathy
-          p
-            | Autonomic neuropathy affects the nerves in your body that control your body systems.
-        .btn-group
-          label.btn.btn-success(ng-model='neuropathy_helpful' btn-radio="'Helpful'") Helpful
-          label.btn.btn-success(ng-model='neuropathy_helpful' btn-radio="'Confusing'") Confusing
+
       .row.clearfix
         .col-md-12.column
           hr
