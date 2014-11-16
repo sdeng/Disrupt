@@ -38,7 +38,7 @@
           h1
             .btn.btn-primary(ng-click="toggleSection('lifestyle')", ng-show='!is_lifestyle_hidden') hide
             .btn.btn-success(ng-click="toggleSection('lifestyle')", ng-show='is_lifestyle_hidden') show patient
-            | Lifestyle Recommendations
+            | Recommendations
           .content(ng-show='!is_lifestyle_hidden')
               form.form-inline(action='demo_form.asp', method='get')
                 .checkbox(ng-repeat='choice in lifestyle_choices')
@@ -141,6 +141,8 @@
                   | 10/10/2014
                 dt
                   | Expected Arrival Date
+                dd
+                  | 10/24/2014
                 dt
                   | Reason
                 dd
