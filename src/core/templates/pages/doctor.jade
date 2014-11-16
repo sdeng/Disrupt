@@ -14,7 +14,7 @@
         .col-md-12.column
           h1
             .btn.btn-primary(ng-click="toggleSection('diagnosis')", ng-show='!is_diagnosis_hidden') hide
-            .btn.btn-success(ng-click="toggleSection('diagnosis')", ng-show='is_diagnosis_hidden') show
+            .btn.btn-success(ng-click="toggleSection('diagnosis')", ng-show='is_diagnosis_hidden') show patient
             | Diagnosis
           p(ng-show='!is_diagnosis_hidden')
             | {{diagnosis}}
@@ -22,7 +22,7 @@
         .col-md-12.column
           h1
             .btn.btn-primary(ng-click="toggleSection('treatment')", ng-show='!is_treatment_hidden') hide
-            .btn.btn-success(ng-click="toggleSection('treatment')", ng-show='is_treatment_hidden') show
+            .btn.btn-success(ng-click="toggleSection('treatment')", ng-show='is_treatment_hidden') show patient
             | Treatment
           .content(ng-show='!is_treatment_hidden')
               .styled-select.blue.semi-square
@@ -34,7 +34,7 @@
         .col-md-12.column
           h1
             .btn.btn-primary(ng-click="toggleSection('lifestyle')", ng-show='!is_lifestyle_hidden') hide
-            .btn.btn-success(ng-click="toggleSection('lifestyle')", ng-show='is_lifestyle_hidden') show
+            .btn.btn-success(ng-click="toggleSection('lifestyle')", ng-show='is_lifestyle_hidden') show patient
             | Lifestyle
           .content(ng-show='!is_lifestyle_hidden')
               form.form-inline(action='demo_form.asp', method='get')
@@ -50,7 +50,7 @@
         .col-md-12.column
           h3
             .btn.btn-primary(ng-click="toggleSection('tests_ordered')", ng-show='!is_test_results_hidden') hide
-            .btn.btn-success(ng-click="toggleSection('tests_ordered')", ng-show='is_test_results_hidden') show
+            .btn.btn-success(ng-click="toggleSection('tests_ordered')", ng-show='is_test_results_hidden') show patient
             | Test Results
           .content(ng-show='!is_test_results_hidden')
               dl
