@@ -42,7 +42,10 @@
                 | Insulin is a naturally occurring hormone secreted by the pancreas. Many people with diabetes are prescribed insulin, either because their bodies do not produce insulin (type 1 diabetes) or do not use insulin properly (type 2 diabetes).
               p
                 | There are more than 20 types of insulin sold in the United States. These insulins differ in how they are made, how they work in the body, and how much they cost. Your doctor will help you find the right type of insulin for your health needs and your lifestyle.
-      .row.clearfix
+         .btn-group
+          label.btn.btn-success(ng-model='medication_helpful' btn-radio="'Helpful'") Helpful
+          label.btn.btn-success(ng-model='medication_helpful' btn-radio="'Confusing'") Confusing
+     .row.clearfix
         .col-md-12.column
           h3
             | Lifestyle
@@ -121,6 +124,9 @@
               | If you smoke, get help to quit.
             li
               | Ask your health care provider about medications to help reduce high blood pressure. Samples of these types of medications include ACE inhibitors, ARBs, beta blockers, calcium channel blockers and diuretics.
+        .btn-group
+          label.btn.btn-success(ng-model='lifestyle_helpful' btn-radio="'Helpful'") Helpful
+          label.btn.btn-success(ng-model='lifestyle_helpful' btn-radio="'Confusing'") Confusing
       .row.clearfix
         .col-md-12.column
           h3
@@ -141,10 +147,13 @@
             | Autonomic Neuropathy
           p
             | Autonomic neuropathy affects the nerves in your body that control your body systems.
+        .btn-group
+          label.btn.btn-success(ng-model='neuropathy_helpful' btn-radio="'Helpful'") Helpful
+          label.btn.btn-success(ng-model='neuropathy_helpful' btn-radio="'Confusing'") Confusing
       .row.clearfix
         .col-md-12.column
           h3
-            | Test Results
+            | Test Orders
           dl
             dt
               | Date Ordered
@@ -156,5 +165,7 @@
               | Reason
             dd
               | Blood work.
-
+        .btn-group
+          label.btn.btn-success(ng-model='test_result_helpful' btn-radio="'Helpful'") Helpful
+          label.btn.btn-success(ng-model='test_result_helpful' btn-radio="'Confusing'") Confusing
 {% endverbatim %}
