@@ -4,26 +4,28 @@
     .row
         .col-md-6
             h1 {{patient_name}}
+            p.text-left
+                | Reason for Visit: Diabetic Care
+            p.text-left
+                | Date: 10/10/2014
         .col-md-6
-    .row
-        .col-md-4
-            h3 Reason for visit
-        .col-md-8
-            h3 {{reason_for_visit}}
-    .row.diagnosis
-        .col-md-12.column
-          h1
-            .btn.btn-primary(ng-click="toggleSection('diagnosis')", ng-show='!is_diagnosis_hidden') hide
-            .btn.btn-success(ng-click="toggleSection('diagnosis')", ng-show='is_diagnosis_hidden') show patient
-            | Diagnosis
-          p(ng-show='!is_diagnosis_hidden')
-            | {{diagnosis}}
+
+    //
+        .row.diagnosis
+            .col-md-12.column
+              h1
+                .btn.btn-primary(ng-click="toggleSection('diagnosis')", ng-show='!is_diagnosis_hidden') hide
+                .btn.btn-success(ng-click="toggleSection('diagnosis')", ng-show='is_diagnosis_hidden') show patient
+                | Diagnosis
+              p(ng-show='!is_diagnosis_hidden')
+                | {{diagnosis}}
     .row.treatment
         .col-md-12.column
+          hr
           h1
             .btn.btn-primary(ng-click="toggleSection('treatment')", ng-show='!is_treatment_hidden') hide
             .btn.btn-success(ng-click="toggleSection('treatment')", ng-show='is_treatment_hidden') show patient
-            | Treatment
+            | Learn About Your Diagnosis
           .content(ng-show='!is_treatment_hidden')
               .styled-select.blue.semi-square
                     select(ng-model='selected_treatment_option', ng-options='treatment_option as treatment_option.name for treatment_option in treatment_options')
@@ -32,27 +34,106 @@
                 | {{selected_treatment_option.content}}
     .row.lifestyle
         .col-md-12.column
+          hr
           h1
             .btn.btn-primary(ng-click="toggleSection('lifestyle')", ng-show='!is_lifestyle_hidden') hide
             .btn.btn-success(ng-click="toggleSection('lifestyle')", ng-show='is_lifestyle_hidden') show patient
-            | Lifestyle
+            | Lifestyle Recommendations
           .content(ng-show='!is_lifestyle_hidden')
               form.form-inline(action='demo_form.asp', method='get')
                 .checkbox(ng-repeat='choice in lifestyle_choices')
                     label
                       input(type='checkbox', ng-model='choice.selected')
                       | {{choice.name}}
-
               .selected_choices(ng-repeat='selected_lifestyle_choice in selected_lifestyle_choices')
                 p {{selected_lifestyle_choice.content}}
+              .skin(ng-show='is_skin_selected')
+                  h4
+                    | Skin Care
+                  p
+                    | Diabetes can affect every part of the body, including the skin. As many as one third of people with diabetes will have a skin disorder caused or affected by diabetes at some time in their lives. In fact, such problems are sometimes the first sign that a person has diabetes. Luckily, most skin conditions can be prevented or easily treated if caught early.
+                  p
+                    | There are several things you can do to head off skin problems. Keep your diabetes well managed. People with high glucose levels tend to have dry skin and less ability to fend off harmful bacteria. Both conditions increase the risk of infection.
+                  ul
+                    li
+                      | Keep skin clean and dry. Use talcum powder in areas where skin touches skin, such as armpits and groin.
+                    li
+                      | Avoid very hot baths and showers. If your skin is dry, don't use bubble baths. Moisturizing soaps may help. Afterward, use a standard skin lotion, but don't put lotions between toes. The extra moisture there can encourage fungus to grow.
+                    li
+                      | Prevent dry skin. Scratching dry or itchy skin can open it up and allow infection to set in. Moisturize your skin to prevent chapping, especially in cold or windy weather.
+                    li
+                      | Treat cuts right away. Wash minor cuts with soap and water. Do not use Mercurochrome antiseptic, alcohol, or iodine to clean skin because they are too harsh. Only use an antibiotic cream or ointment if your doctor says it's okay. Cover minor cuts with sterile gauze. See a doctor right away if you get a major cut, burn, or infection.
+                    li
+                      | During cold, dry months, keep your home more humid. Bathe less during this weather, if possible.
+                    li
+                      | Use mild shampoos. Do not use feminine hygiene sprays.
+                    li
+                      | See a dermatologist (skin doctor) about skin problems if you are not able to solve them yourself.
+                    li
+                      | Take good care of your feet. Check them every day for sores and cuts. Wear broad, flat shoes that fit well. Check your shoes for foreign objects before putting them on.
+              .blood_pressure(ng-show='is_blood_pressure_selected')
+                  h4
+                    | High Blood Pressure (Hypertension)
+                  p
+                    | Nearly 1 in 3 American adults has high blood pressure and 2 in 3 people with diabetes report having high blood pressure or take prescription medications to lower their blood pressure. Your heart has to work harder when blood pressure is high, and your risk for heart disease, stroke and other problems goes up.
+                  p
+                    | High blood pressure won’t go away without treatment. That could include lifestyle changes and, if your doctor prescribes it, medicine.
+                  h5
+                    | What Is Blood Pressure?
+                  p
+                    | Blood pressure is the force of blood flow inside your blood vessels. Your doctor records your blood pressure as two numbers, such as 120/80, which you may hear them say as "120 over 80." Both numbers are important.
+                  p
+                    | The first number is the pressure as your heart beats and pushes blood through the blood vessels. Health care providers call this the "systolic" pressure. The second number is the pressure when the vessels relax between heartbeats. It's called the "diastolic" pressure.
+                  p
+                    | Here's what the numbers mean:
+                  ul
+                    li
+                      | Healthy blood pressure: below 120/80
+                    li
+                      | Early high blood pressure: between 120/80 and 140/90
+                    li
+                      | High blood pressure: 140/90 or higher
+                  p
+                    | The lower your blood pressure, the better your chances of delaying or preventing a heart attack or a stroke.
+                  p
+                    | When your blood moves through your vessels with too much force, you have high blood pressure or hypertension. Your heart has to work harder when blood pressure is high, and your risk for heart disease and diabetes goes up. High blood pressure raises your risk for heart attack, stroke, eye problems and kidney disease. High blood pressure is a problem that won't go away without treatment and changes to your diet and lifestyle.
+                  p
+                    | You should always have an idea of what your blood pressure is, just as you know your height and weight.
+                  h5
+                    | How Will I Know if I Have High Blood Pressure?
+                  p
+                    | High blood pressure is a silent problem — you won't know you have it unless your health care provider checks your blood pressure. Have your blood pressure checked at each regular health care visit, or at least once every two years (people without diabetes or other risk factors for heart disease).
+                  h5
+                    | What Can I Do About High Blood Pressure?
+                  p
+                    | Here are some easy tips to help reduce your blood pressure:
+                  ul
+                    li
+                      | Work with your health care provider to find a treatment plan that's right for you.
+                    li
+                      | Eat whole-grain breads and cereals.
+                    li
+                      | Try herbs and spices instead of salt to flavor foods.
+                    li
+                      | Check food labels and choose foods with less than 400 mg of sodium per serving.
+                    li
+                      | Lose weight or take steps to prevent weight gain.
+                    li
+                      | Limit alcohol consumption and consult your health care provider about whether it is safe to drink alcohol at all.
+                    li
+                      | If you smoke, get help to quit.
+                    li
+                      | Ask your health care provider about medications to help reduce high blood pressure. Samples of these types of medications include ACE inhibitors, ARBs, beta blockers, calcium channel blockers and diuretics.
 
     .row.tests_ordered
         .col-md-12.column
-          h3
+          hr
+          h1
             .btn.btn-primary(ng-click="toggleSection('tests_ordered')", ng-show='!is_test_results_hidden') hide
             .btn.btn-success(ng-click="toggleSection('tests_ordered')", ng-show='is_test_results_hidden') show patient
-            | Test Results
+            | Test & Lab Orders
           .content(ng-show='!is_test_results_hidden')
+            .col-md-12.column
               dl
                 dt
                   | Date Ordered
@@ -60,14 +141,10 @@
                   | 10/10/2014
                 dt
                   | Expected Arrival Date
-                dd
+                dt
                   | Reason
-    .row.next_visit
-        .col-md-12.column
-          h1
-            | Next Visit
-            | 10/10/2014
-
+                dd
+                  | Blood work.
 
 
 

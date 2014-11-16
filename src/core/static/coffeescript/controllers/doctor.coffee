@@ -4,9 +4,11 @@ Disrupt.controller 'Doctor', ($scope, $http, $location) ->
         is_treatment_hidden: false
         is_lifestyle_hidden: false
         is_test_results_hidden: false
+        is_skin_selected: true
+        is_blood_pressure_selected: true
         patient_name: 'Sam Deng'
-        reason_for_visit: 'Diabetic care'
-        diagnosis: 'Sams foot turned into one giant calluses'
+        reason_for_visit: 'Follow up visit for diabetic care'
+        diagnosis: "Sam's foot turned into one giant calluses"
         test_results: {'date':'10/10/2014', 'expected':'10/10/2014'}
         toggleSection: (section)->
             if section == 'diagnosis'
@@ -28,23 +30,18 @@ Disrupt.controller 'Doctor', ($scope, $http, $location) ->
                         {'name':'Poor Circulation','content':"Poor circulation (blood flow) can make your foot less able to fight infection and to heal. Diabetes causes blood vessels of the foot and leg to narrow and harden. You can control some of the things that cause poor blood flow. Don't smoke; smoking makes arteries harden faster. Also, follow your health care provider's advice for keeping your blood pressure and cholesterol under control. If your feet are cold, you may be tempted to warm them. Unfortunately, if your feet cannot feel heat, it is easy for you to burn them with hot water, hot water bottles, or heating pads. The best way to help cold feet is to wear warm socks. Some people feel pain in their calves when walking fast, up a hill, or on a hard surface. This condition is called intermittent claudication. Stopping to rest for a few moments should end the pain. If you have these symptoms, you must stop smoking. Work with your health care provider to get started on a walking program. Some people can be helped with medication to improve circulation. Exercise is good for poor circulation. It stimulates blood flow in the legs and feet. Walk in sturdy, good-fitting, comfortable shoes, but don't walk when you have open sores."},
                         {'name':'Amputation','content':"People with diabetes are far more likely to have a foot or leg amputated than other people. The problem? Many people with diabetes have peripheral arterial disease (PAD), which reduces blood flow to the feet. Also, many people with diabetes have nerve disease, which reduces sensation. Together, these problems make it easy to get ulcers and infections that may lead to amputation. Most amputations are preventable with regular care and proper footwear. For these reasons, take good care of your feet and see your health care provider right away about foot problems. Ask about prescription shoes that are covered by Medicare and other insurance. Always follow your health care provider's advice when caring for ulcers or other foot problems. One of the biggest threats to your feet is smoking. Smoking affects small blood vessels. It can cause decreased blood flow to the feet and make wounds heal slowly. A lot of people with diabetes who need amputations are smokers."},
                     ]
-
-        selected_lifestyle_choices: []
         lifestyle_choices: [
-                        {'name':'Weight Loss', 'selected':true, 'content':'Weight Loss'},
-                        {'name':'Nutrition', 'selected':true, 'content':'Nutrition'},
-                        {'name':'Safety Precautions', 'selected':false, 'content':'Safety Precautions'},
-                        {'name':'Mental Health', 'selected':false, 'content':'Mental Health'},
+                        {'name':'Skin Care', 'selected':true, 'content':'Weight Loss'},
+                        {'name':'High Blood Pressure (Hypertension)', 'selected':true, 'content':'Nutrition'},
                     ]
 
     $scope.$watch 'lifestyle_choices',
         (lifestyle_choices)->
-            $scope.selected_lifestyle_choices = []
             for choice in lifestyle_choices
-                if choice.selected
-                    $scope.selected_lifestyle_choices.push choice
-
-
+                if choice.name=='Skin Care'
+                    $scope.is_skin_selected = choice.selected
+                if choice.name=='High Blood Pressure (Hypertension)'
+                    $scope.is_blood_pressure_selected = choice.selected
         true
 
 
