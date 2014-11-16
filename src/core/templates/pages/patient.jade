@@ -4,15 +4,16 @@
 .container
     .row.clearfix
         .col-md-6.column
+          img(src='https://pbs.twimg.com/profile_images/2601360658/image.jpg' width='300px')
           h3
             | Dr. Vijay
           p.text-left
             | Reason for Visit: Diabetic Care
-          div
+          p.text-left
             | Date: 10/10/2014
         .col-md-6.column
           h3
-            | Stats
+            | Patient Stats
           dl
             dt
               | Height
@@ -28,6 +29,7 @@
               | O+
       .row.clearfix
         .col-md-12.column
+          hr
           h3
             | Medications
       .row.clearfix
@@ -45,8 +47,9 @@
          .btn-group
           label.btn.btn-success(ng-model='medication_helpful' btn-radio="'Helpful'") Helpful
           label.btn.btn-success(ng-model='medication_helpful' btn-radio="'Confusing'") Confusing
-     .row.clearfix
+      .row.clearfix
         .col-md-12.column
+          hr
           h3
             | Lifestyle
           h4
@@ -129,6 +132,7 @@
           label.btn.btn-success(ng-model='lifestyle_helpful' btn-radio="'Confusing'") Confusing
       .row.clearfix
         .col-md-12.column
+          hr
           h3
             | Neuropathy (Nerve Damage)
           .media
@@ -152,6 +156,7 @@
           label.btn.btn-success(ng-model='neuropathy_helpful' btn-radio="'Confusing'") Confusing
       .row.clearfix
         .col-md-12.column
+          hr
           h3
             | Test Orders
           dl
