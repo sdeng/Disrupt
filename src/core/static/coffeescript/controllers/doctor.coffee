@@ -6,7 +6,7 @@ Disrupt.controller 'Doctor', ($scope, $http, $location) ->
         is_test_results_hidden: true
         is_skin_selected: true
         is_blood_pressure_selected: true
-        patient_name: 'Sam Deng'
+        patient_name: 'Marge Simpson'
         reason_for_visit: 'Follow up visit for diabetic care'
         diagnosis: "Sam's foot turned into one giant calluses"
         test_results: {'date':'10/10/2014', 'expected':'10/10/2014'}
